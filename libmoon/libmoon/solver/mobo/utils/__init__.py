@@ -1,2 +1,0 @@
-from .lhs import lhs
- 
