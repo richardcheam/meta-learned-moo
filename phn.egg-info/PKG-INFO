@@ -1,0 +1,23 @@
+Metadata-Version: 2.4
+Name: phn
+Version: 1.0.0
+Summary: Pareto HyperNetworks
+Home-page: 
+Author: 
+Author-email: 
+Requires-Python: >=3.5
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=1.18.2
+Requires-Dist: torch>=1.4.0
+Requires-Dist: torchvision>=0.5.0
+Requires-Dist: tqdm>=4.45.0
+Requires-Dist: cvxpy
+Requires-Dist: cvxopt
+Requires-Dist: scikit-learn
+Requires-Dist: pymoo==0.5.0
+Dynamic: description-content-type
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
