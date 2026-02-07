@@ -31,7 +31,9 @@ All LibMOON experiments are launched using a single local runner script:
 
 Run an experiment
 
+```bash
 ./run-mtl-libmoon.sh DATASET OPTIM SOLVER SEED EPOCHS
+```
 
 Examples:
 ```bash
@@ -49,7 +51,9 @@ A unified local launcher automatically selects the correct training pipeline (ta
 
 Run an experiment
 
+```bash
 ./run_experiment.sh DATASET OPTIM SOLVER SEED EPOCHS
+```
 
 Examples:
 ```bash
