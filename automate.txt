@@ -1,0 +1,29 @@
+#!/bin/bash
+
+DATASETS=("adult" "compas" "credit" "mnist" "fashion" "electricity")
+OPTIMS=("adam" "velo")
+SEEDS=(0 1 2)
+EPOCHS=100
+SOLVER="epo"
+
+for DATASET in "${DATASETS[@]}"; do
+  for OPTIM in "${OPTIMS[@]}"; do
+    for SEED in "${SEEDS[@]}"; do
+      echo "Running $DATASET $OPTIM seed=$SEED"
+      ./run-phn-velo.sh "$DATASET" "$OPTIM" "$SOLVER" "$SEED" "$EPOCHS"
+    done
+  done
+done
+
+----------------------------------------------------------------
+
+#!/bin/bash
+
+DATASETS=("adult" "credit" "compas" "mnist" "fashion" "electricity")
+SOLVERS=("epo" "mgdaub" "pcgrad" "agg_SmTche")
+
+for DATASET in "${DATASETS[@]}"; do
+  for SOLVER in "${SOLVERS[@]}"; do
+    ./run-mtl-libmoon.sh "$DATASET" "$SOLVER"
+  done
+done
