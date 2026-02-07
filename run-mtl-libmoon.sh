@@ -7,7 +7,7 @@ SEEDS=${3:-5}
 EPOCHS=${4:-100}
 
 if [ $# -lt 2 ]; then
-  echo "Usage: ./run_libmoon.sh DATASET SOLVER [SEEDS] [EPOCHS]"
+  echo "Usage: ./run-mtl-libmoon.sh DATASET SOLVER [SEEDS] [EPOCHS]"
   exit 1
 fi
 
@@ -23,7 +23,7 @@ echo "======================================"
 
 cd "$LIBMOON_DIR"
 
-python /libmoon-enhanced/multitask_learning_problem_test/test_moo.py \
+python multitask_learning_problem_test/test_moo.py \
   --dataset "$DATASET" \
   --solver "$SOLVER" \
   --seeds "$SEEDS" \
