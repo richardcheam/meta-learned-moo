@@ -182,4 +182,4 @@ widgetsnbextension==4.0.11
 wrapt==1.16.0
 -e git+https://github.com/Belilovsky-Lab/pylo@ee00df198e976403fc4df141cf6d13407954146f#egg=pylo
 # Editable install with no version control (phn==1.0.0)
--e /phn-velo/
+-e phn-velo/
