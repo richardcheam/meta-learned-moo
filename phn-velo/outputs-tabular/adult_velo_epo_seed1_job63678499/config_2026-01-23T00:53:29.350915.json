@@ -1,0 +1,1 @@
+{"n_epochs": 50, "step": 10, "learning_rate": 0.0001, "weight_decay": 0.0, "alpha": 0.2, "ray_hidden": 100, "n_rays": 25, "tasks_ids": [0, 1], "solver_type": "epo", "training_time_seconds": 825.48508644104, "optimizer": "velo"}

@@ -1,0 +1,1 @@
+{"epochs": 50, "solver": "ls", "optimizer": "adam", "n_rays": 25, "ray_hidden": 100, "alpha": 0.2, "training_time": 365.7399671077728}

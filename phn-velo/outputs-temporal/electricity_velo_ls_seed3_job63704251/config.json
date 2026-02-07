@@ -1,0 +1,1 @@
+{"optim": "velo", "solver": "ls", "epochs": 50, "ray_hidden": 100, "alpha": 0.2, "batch_size": 256, "lr": 0.0001, "wd": 0.0, "n_rays": 25, "eval_every": 10, "seq_len": 96, "out_dir": "/shared/ifbstor1/projects/multiobjctvopt4sepsis/stageMOO/velo-hpn/outputs/temporal/electricity_velo_ls_seed3_job63704251", "seed": 3, "no_cuda": false, "gpus": "0"}
