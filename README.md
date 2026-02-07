@@ -39,7 +39,7 @@ Examples:
 ```
 Outputs
 
-Results are saved in: multitask_learning_problem_test/results/<dataset>/*.pkl
+Results are saved in: multitask_learning_problem_test/results/<dataset>/.pkl
 
 ## Pareto Hypernetwork with VeLO (PHN-VeLO)
 
