@@ -73,4 +73,7 @@ chmod +x <script>.sh
 ```
 
 If the installation of requirements.txt faces problem, the version of the issue package can be removed. 
-
+If you could not install due to version of pip, run: 
+```bash
+pip install --upgrade pip
+```
