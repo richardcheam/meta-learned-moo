@@ -32,8 +32,10 @@ All LibMOON experiments are launched using a single local runner script:
 Run an experiment
 
 ```bash
-./run-mtl-libmoon.sh DATASET SOLVER SEED EPOCHS
+./run-mtl-libmoon.sh DATASET SOLVER SEEDS EPOCHS
 ```
+
+Note that an experiment here will run many seeds directly, so SEEDS=5 equals to 5 runs.
 
 Examples:
 ```bash
@@ -52,8 +54,10 @@ A unified local launcher automatically selects the correct training pipeline (ta
 Run an experiment
 
 ```bash
-./run-mtl-libmoon.sh DATASET SOLVER SEED EPOCHS
+./run-phn-velo.sh DATASET SOLVER SEED EPOCHS
 ```
+
+Note that an experiment here equal to one run. SEED is here is the seed number for that run.
 
 Examples:
 ```bash
@@ -77,3 +81,5 @@ If you could not install due to version of pip, run:
 ```bash
 pip install --upgrade pip
 ```
+
+Each script is an experimental test. To automate all datasets, consult automate.txt for help and create another script submit all works accordingly. 
