@@ -32,7 +32,7 @@ All LibMOON experiments are launched using a single local runner script:
 Run an experiment
 
 ```bash
-./run-mtl-libmoon.sh DATASET OPTIM SOLVER SEED EPOCHS
+./run-mtl-libmoon.sh DATASET SOLVER SEED EPOCHS
 ```
 
 Examples:
@@ -63,4 +63,14 @@ Examples:
 Outputs
 
 Results are saved in: outputs/<task_type>/
+
+## Bugs:
+
+Make sure to make the scripts executable by:
+
+```bash
+chmod +x <script>.sh
+```
+
+If the installation of requirements.txt faces problem, the version of the issue package can be removed. 
 
