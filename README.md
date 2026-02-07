@@ -5,8 +5,6 @@ This repository contains two complementary components for studying **meta-learne
 1. **VeLO in LibMOON** – gradient-based multi-task / multi-objective learning benchmarks  
 2. **Pareto Hypernetwork with VeLO (PHN-VeLO)** – Pareto front learning with hypernetworks
 
-All experiments are designed to run **locally** (no SLURM / sbatch required).
-
 ---
 
 ## Install dependencies
@@ -30,9 +28,18 @@ pip install -r requirements.txt
 This part runs multi-task / multi-objective learning experiments using LibMOON with VeLO and other gradient-based solvers.
 
 All LibMOON experiments are launched using a single local runner script:
+
+Run an experiment
+
+./run-mtl-libmoon.sh DATASET OPTIM SOLVER SEED EPOCHS
+
+Examples:
 ```bash
-libmoon-enhanced/run_libmoon.py
+./run-mtl-libmoon.sh mnist agg_SmTche 5 200
 ```
+Outputs
+
+Results are saved in: multitask_learning_problem_test/results/<dataset>/*.pkl
 
 ## Pareto Hypernetwork with VeLO (PHN-VeLO)
 
@@ -46,12 +53,10 @@ Run an experiment
 
 Examples:
 ```bash
-./run_experiment.sh adult velo epo 0 100
+./run-phn-velo.sh adult velo epo 0 100
 ```
 
 Outputs
 
-Results are saved in:
-```bash
-outputs/<task_type>/
-```
+Results are saved in: outputs/<task_type>/
+
