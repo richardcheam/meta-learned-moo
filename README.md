@@ -52,7 +52,7 @@ A unified local launcher automatically selects the correct training pipeline (ta
 Run an experiment
 
 ```bash
-./run_experiment.sh DATASET OPTIM SOLVER SEED EPOCHS
+./run-mtl-libmoon.sh DATASET SOLVER SEED EPOCHS
 ```
 
 Examples:
