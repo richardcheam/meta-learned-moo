@@ -8,6 +8,7 @@ EPOCHS=${4:-100}
 
 if [ $# -lt 2 ]; then
   echo "Usage: ./run-mtl-libmoon.sh DATASET SOLVER [SEEDS] [EPOCHS]"
+  echo "[SEEDS] is number of times to run with different random seeds (default: 5 times)"
   exit 1
 fi
 
@@ -17,7 +18,7 @@ LIBMOON_DIR="$ROOT_DIR/libmoon-enhanced"
 echo "======================================"
 echo "Dataset : $DATASET"
 echo "Solver  : $SOLVER"
-echo "Seeds   : $SEEDS"
+echo "Seeds   : $SEEDS" 
 echo "Epochs  : $EPOCHS"
 echo "======================================"
 

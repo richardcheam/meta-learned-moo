@@ -81,6 +81,7 @@ else:
 # ============================================================
 # Main loop
 # ============================================================
+print("Starting to run for all seeds...(one at a time)")
 for seed in range(args.seeds):
     print("=" * 60)
     print(f"Dataset : {DATASET}")

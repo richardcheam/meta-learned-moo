@@ -1,26 +1,19 @@
 #!/bin/bash
 set -e
 
-# ---------------- Arguments ----------------
 DATASET=$1
 OPTIM=$2
 SOLVER=$3
-SEEDS=${4:-5}
-EPOCHS=${5-50}
+SEED=$4
+EPOCHS=$5
 
 if [ $# -lt 5 ]; then
-  echo "Usage: ./run_experiment.sh DATASET OPTIM SOLVER SEED EPOCHS"
+  echo "Usage: ./run-phn-velo.sh DATASET OPTIM SOLVER SEED EPOCHS"
   exit 1
 fi
 
-# ---------------- Environment ----------------
-# activate venv
-source .venv/bin/activate
-
 ROOT_DIR=$(pwd)
-OUTBASE="$ROOT_DIR/outputs"
-
-mkdir -p "$OUTBASE"
+PHN_DIR="$ROOT_DIR/phn-velo"
 
 echo "======================================"
 echo "Dataset: $DATASET"
@@ -31,52 +24,39 @@ echo "Epochs:  $EPOCHS"
 echo "Start:   $(date)"
 echo "======================================"
 
+cd "$PHN_DIR"
+
 # ---------------- Dataset routing ----------------
 TABULAR_DATASETS=("adult" "compas" "credit")
 MO_MNIST_DATASETS=("mnist" "fashion" "fmnist")
 TEMPORAL_DATASETS=("electricity")
 
 if [[ " ${TABULAR_DATASETS[*]} " =~ " ${DATASET} " ]]; then
-  TASK="tabular"
   TRAINER="experiments/src/trainer_tabular.py"
-
+  TASK="tabular"
 elif [[ " ${MO_MNIST_DATASETS[*]} " =~ " ${DATASET} " ]]; then
-  TASK="mo-mnist"
   TRAINER="experiments/src/trainer_mo-mnist.py"
-
+  TASK="mo-mnist"
 elif [[ " ${TEMPORAL_DATASETS[*]} " =~ " ${DATASET} " ]]; then
-  TASK="temporal"
   TRAINER="experiments/src/trainer_temporal.py"
-
+  TASK="temporal"
 else
-  echo "Unknown dataset: $DATASET"
+  echo "❌ Unknown dataset: $DATASET"
   exit 1
 fi
 
-OUTDIR="$OUTBASE/$TASK/${DATASET}_${OPTIM}_${SOLVER}_seed${SEED}"
+OUTDIR="$ROOT_DIR/outputs/$TASK/${DATASET}_${OPTIM}_${SOLVER}_seed${SEED}"
 mkdir -p "$OUTDIR"
 
-# ---------------- Run ----------------
 echo "Running task type: $TASK"
 echo "Trainer: $TRAINER"
 echo "Output:  $OUTDIR"
 echo "--------------------------------------"
 
-if [ "$TASK" = "temporal" ]; then
-  python "$TRAINER" \
-    --optim "$OPTIM" \
-    --solver "$SOLVER" \
-    --seed "$SEED" \
-    --n-epochs "$EPOCHS" \
-    --out-dir "$OUTDIR"
-else
-  python "$TRAINER" \
-    --dataset "$DATASET" \
-    --optim "$OPTIM" \
-    --solver "$SOLVER" \
-    --seed "$SEED" \
-    --n-epochs "$EPOCHS" \
-    --out-dir "$OUTDIR"
-fi
-
-echo "Finished at $(date)"
+python "$TRAINER" \
+  --dataset "$DATASET" \
+  --optim "$OPTIM" \
+  --solver "$SOLVER" \
+  --seed "$SEED" \
+  --n-epochs "$EPOCHS" \
+  --out-dir "$OUTDIR"
