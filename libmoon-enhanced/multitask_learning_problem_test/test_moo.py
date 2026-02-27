@@ -13,6 +13,9 @@ THIS_DIR = os.path.dirname(os.path.abspath(__file__))
 LIBMOON_ROOT = os.path.abspath(os.path.join(THIS_DIR, ".."))
 sys.path.append(LIBMOON_ROOT)
 
+import sys, pprint
+pprint.pprint(sys.path)
+
 # ============================================================
 # Imports
 # ============================================================

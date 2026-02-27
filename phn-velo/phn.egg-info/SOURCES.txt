@@ -2,6 +2,7 @@ LICENSE
 README.md
 setup.py
 phn/__init__.py
+phn/libmoon_wrapper.py
 phn/solvers.py
 phn.egg-info/PKG-INFO
 phn.egg-info/SOURCES.txt

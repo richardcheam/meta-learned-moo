@@ -26,8 +26,8 @@ import torch
 from torch import nn
 from tqdm import trange
 
-from experiments.dsprites.data import Dataset
-from experiments.dsprites.models import TabularHyperNet, TabularTargetNet
+from experiments.src.data import Dataset
+from experiments.src.models import TabularHyperNet, TabularTargetNet
 
 from experiments.utils import (
     circle_points,
@@ -137,7 +137,7 @@ def train(
     from libmoon.problem.mtl.loaders.compas_loader import Compas
     from libmoon.problem.mtl.loaders.credit_loader import Credit
 
-    from libmoon_adapter import LibMoonTabularAdapter
+    from experiments.src.libmoon_adapter import LibMoonTabularAdapter
     # load dataset from LibMOON (preprocessed MultiMNIST)
     if dataset == "adult":
         train_raw = Adult(split="train", sensible_attribute="gender")
