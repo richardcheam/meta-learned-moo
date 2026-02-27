@@ -35,10 +35,10 @@ if [[ " ${TABULAR_DATASETS[*]} " =~ " ${DATASET} " ]]; then
   TRAINER="experiments.src.trainer_tabular"
   TASK="tabular"
 elif [[ " ${MO_MNIST_DATASETS[*]} " =~ " ${DATASET} " ]]; then
-  TRAINER="experiments.src.trainer_mo-mnist.py"
+  TRAINER="experiments.src.trainer_mo-mnist"
   TASK="mo-mnist"
 elif [[ " ${TEMPORAL_DATASETS[*]} " =~ " ${DATASET} " ]]; then
-  TRAINER="experiments.src.trainer_temporal.py"
+  TRAINER="experiments.src.trainer_temporal"
   TASK="temporal"
 else
   echo "Unknown dataset: $DATASET"
